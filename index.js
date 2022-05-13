@@ -12,11 +12,11 @@ app.use(bodyParser.json())
 
 app.use(bodyParser.urlencoded( { extended : true}))
 app.get('/', function(req,res) {
-    res.sendFile(__dirname + " / " + index.html);
+    res.sendFile(`${__dirname} / ${index.html}`);
 })
 
 app.get('/login.html' , function(req,res){
-    res.sendFile(__dirname + " / " + login.html);
+    res.sendFile(`${__dirname} / ${login.html}`);
 })
 
 // Route to Handle Login and registration
@@ -30,4 +30,4 @@ app.post("/controller/register-controller",registerController.register);
 app.post("/controller/authenticate-controller",authenticateController.authenticate);
 
 
-app.listen(8000 , () => console.log("Listening on Port 8000"));
+app.listen(8080 , () => console.log("Listening on Port 8080"));
